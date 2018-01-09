@@ -1,0 +1,69 @@
+Requirements
+------------
+
+- python2.7
+  - numpy
+  - scipy
+  - ete2
+  - pandas
+  - collections
+  - re
+  - biopython
+  - multiprocessing
+
+- RevBayes
+
+
+Files
+-----
+
+1. Python code
+--------------
+- extractMatrix.py: reformats list file into csv file
+- computeWordSimilarities: computes the calibrated PMI similarity for each synonymous word
+  pair from two different languages
+- cronbach.py: computes Cronbach's alpha for each language
+- bayesianBootstrap.py: computes the distance matrix and 1000 Bayesian-bootstrap distance
+  matrices and infers trees using fastme
+  The reference tree is stored as "afroasiatic.tre" and the 1000 Bayesian-bootstrap trees
+  as "afroasiatic-bbs.tree".
+  
+
+
+2. RevBayes code
+----------------
+
+- annotateTree.Rev: annotates the reference tree with confidence values according to the
+  Bayesian-bootstrap trees
+
+
+3. Input data
+-------------
+
+- list-afroasiatic.txt: Afroasiatic ASJP-wordlists in ASJP-16 format
+- sounds41.txt: the 41 ASJP sound classes
+- pmi-word.txt: PMI score matrix
+- gapPenalties.txt: gap penalties
+
+
+4. Intermediate data
+--------------------
+
+- afroasiaticMatrix.csv: wordlists in csv format
+- conceptwiseSimilarities.csv: output of computeWordSimilarities.py
+- cronbachValues.csv: Cronbach's alpha values
+- afroasiatic.tre: PMI tree
+- afroasiatic-bbs.tree: Bayesian bootstrap trees
+
+
+5. Output data
+--------------
+
+- afroasiatic.annotated.tre
+
+
+6. Documentation
+----------------
+
+- workflow.txt: list of commands to replicate the analysis
+- README: this file

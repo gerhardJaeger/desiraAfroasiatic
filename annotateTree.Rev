@@ -1,0 +1,5 @@
+referenceTree = readTrees("afroasiatic.tre")[1]
+trees = readTrees("afroasiatic-bbs.tree")
+trees[1001] = referenceTree
+annotatedTree = annotateTree(referenceTree,treeTrace(trees),file="afroasiatic.annotated.tre")
+q()

@@ -1,0 +1,6 @@
+python extractMatrix.py
+python computeWordSimilarities.py
+python cronbach.py
+python bayesianBootstrap.py
+rb annotateTree.Rev
+
